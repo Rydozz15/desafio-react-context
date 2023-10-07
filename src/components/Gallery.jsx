@@ -24,9 +24,8 @@ const Gallery = () => {
           : 
           gallery.map(el =>
             <div onClick={() => changeLike(`${el.id}`)} className="photo" key={el.id} style={{backgroundImage: `url(${el.src.original})`}}>
-              {el.src.liked ?  <IconHeart filled={true} /> : <IconHeart filled={false}/>}
+              {el.liked ?  <IconHeart filled={true} /> : <IconHeart filled={false}/>}
               {el.alt}
-              {el.id}
             </div>
           )
         }
