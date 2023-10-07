@@ -29,5 +29,5 @@ npm run dev
 ```
 
 ## Usage
-It's an example of an App consuming a library of photographs. You can like them clicking on them, it'll change the "heart" and update the 'Favorites page' with all the photos that you chose earlier.
+It's an example of an App consuming a library of photographs. You can like them by clicking on them, it'll change the "heart" and update the 'Favorites page' with all the photos that you chose earlier.
 That's all
