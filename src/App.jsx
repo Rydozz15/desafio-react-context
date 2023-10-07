@@ -4,42 +4,27 @@ import Navbar from "./components/Navbar";
 //Views
 import Favorites from "./views/Favorites";
 import Home from "./views/Home";
-//Fetch section
-import axios from 'axios';
-import { useEffect } from 'react';
-const PHOTO_URL = "/photos.json";
+
+//Conext Provider
+import GalleryProvider from "./context/GalleryContext";
 
 const App = () => {
-
-  useEffect(() => {
-    fetchPhotos();
-  }, []);
   
-  const fetchPhotos = async () => {
-    axios
-      .get(PHOTO_URL)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((err) => {
-        console.log("Error al obtener datos de la API:", err);
-      });
-  };
-
   return (
     <div>
-      <Navbar />
-
-      <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-        <Route
-          path="/favoritos"
-          element={<Favorites />}
-        />
-      </Routes>
+      <GalleryProvider>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/favoritos"
+            element={<Favorites />}
+          />
+        </Routes>
+      </GalleryProvider>
     </div>
   );
 };
